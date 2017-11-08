@@ -7,6 +7,10 @@ import {
   StyleSheet,
   Animated
 } from 'react-native';
+import {
+  clearLocalNotification,
+  setLocalNotification
+} from '../utils/notifications';
 import CtaButton from './CtaButton';
 import { connect } from 'react-redux';
 import { newDeck } from '../actions';
@@ -60,6 +64,9 @@ class Quiz extends Component {
       this.setState({
         showScore: true
       });
+
+      clearLocalNotification()
+        .then(setLocalNotification)
     }
   }
 
