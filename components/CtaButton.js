@@ -60,9 +60,11 @@ const styles = StyleSheet.create({
   },
   btnPositive: {
     backgroundColor: '#0b0',
+    borderColor: '#0b0',
   },
   btnFalse: {
     backgroundColor: '#b00',
+    borderColor: '#b00',
   },
   btnWide: {
     paddingTop: 30,
