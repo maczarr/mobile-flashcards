@@ -15,10 +15,12 @@ export default function CtaButton ({ children, onPress, layout = 'dark', size })
       btnTxtStyles.push(styles.btnTxtLight);
       break;
     case 'positive':
-
+      btnStyles.push(styles.btnPositive);
+      btnTxtStyles.push(styles.btnTxtPositive);
       break;
     case 'false':
-
+      btnStyles.push(styles.btnFalse);
+      btnTxtStyles.push(styles.btnTxtFalse);
       break;
   }
 
@@ -57,10 +59,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   btnPositive: {
-
+    backgroundColor: '#0b0',
   },
   btnFalse: {
-
+    backgroundColor: '#b00',
   },
   btnWide: {
     paddingTop: 30,
@@ -78,10 +80,10 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   btnTxtPositive: {
-
+    color: '#fff',
   },
   btnTxtFalse: {
-
+    color: '#fff',
   },
   btnTxtWide: {
     fontSize: 20,

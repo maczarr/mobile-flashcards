@@ -12,10 +12,6 @@ class DeckDetail extends Component {
     }
   }
 
-  startQuiz = () => {
-
-  }
-
   render() {
     const { title, questions } = this.props.deckDetails;
     const qAmount = questions.length;
@@ -37,7 +33,13 @@ class DeckDetail extends Component {
           >
             Add Card
           </CtaButton>
-          <CtaButton onPress={() => this.startQuiz} size='wide'>
+          <CtaButton
+              onPress={() => this.props.navigation.navigate(
+              'Quiz',
+              { deckId: title }
+            )}
+            size='wide'
+          >
             Start Quiz
           </CtaButton>
         </View>

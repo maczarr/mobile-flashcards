@@ -9,6 +9,7 @@ import Decks from './components/Decks';
 import NewDeck from './components/NewDeck';
 import DeckDetail from './components/DeckDetail';
 import AddCard from './components/AddCard';
+import Quiz from './components/Quiz';
 
 function FlashcardsStatusBar ({backgroundColor, ...props}) {
   return (
@@ -69,6 +70,15 @@ const MainNavigator = StackNavigator({
   },
   AddCard: {
     screen: AddCard,
+    navigationOptions: {
+      headerTintColor: '#fff',
+      headerStyle: {
+        backgroundColor: '#000',
+      }
+    }
+  },
+  Quiz: {
+    screen: Quiz,
     navigationOptions: {
       headerTintColor: '#fff',
       headerStyle: {
