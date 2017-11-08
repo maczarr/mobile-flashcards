@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -11,6 +11,7 @@ import {
   clearLocalNotification,
   setLocalNotification
 } from '../utils/notifications';
+import { NavigationActions } from 'react-navigation';
 import CtaButton from './CtaButton';
 import { connect } from 'react-redux';
 import { newDeck } from '../actions';
@@ -81,7 +82,7 @@ class Quiz extends Component {
 
   render() {
     const { questionsTotal, showScore } = this.state;
-    const { questions } = this.props;
+    const { questions, deckId } = this.props;
     let { currentQuestion, answerCorrect, answerIncorrect } = this.state;
 
     if(showScore) {
@@ -113,6 +114,19 @@ class Quiz extends Component {
           <Text style={styles.scoreMotivation}>
             {motivation}
           </Text>
+
+          <CtaButton
+            /*onPress={() => this.props.navigation.navigate(
+              'DeckDetail', { deckId }
+            )}*/
+            onPress={() => this.props.navigation.dispatch(
+              NavigationActions.back()
+            )}
+            layout='light'
+            size='wide'
+          >
+            Back to Deck
+          </CtaButton>
 
           <CtaButton
             onPress={this.reset}
@@ -195,7 +209,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   scoreMotivation: {
-    fontSize: 22,
+    fontSize: 20,
     color: '#666',
     marginBottom: 40,
   },
