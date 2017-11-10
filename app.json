@@ -1,5 +1,17 @@
 {
   "expo": {
-    "sdkVersion": "21.0.0"
+    "sdkVersion": "21.0.0",
+    "orientation": "portrait",
+    "name": "Flashcards",
+    "description": "Train your brain with Flashcards",
+    "slug": "flashcards",
+    "version": "1.0",
+    "icon": "https://raw.githubusercontent.com/maczarr/mobile-flashcards/master/mobile-flashcards.png",
+    "notification": {
+      "icon": "https://raw.githubusercontent.com/maczarr/mobile-flashcards/master/mobile-flashcards.png"
+    },
+    "android": {
+      "package": "org.mobile-flashcards.exp",
+    }
   }
 }
