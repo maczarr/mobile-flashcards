@@ -10,8 +10,11 @@
     "notification": {
       "icon": "https://raw.githubusercontent.com/maczarr/mobile-flashcards/master/mobile-flashcards.png"
     },
+    "ios": {
+     "bundleIdentifier": "name.holweg.flashcards",
+    },
     "android": {
-      "package": "org.mobile-flashcards.exp",
+      "package": "name.holweg.flashcards",
     }
   }
 }
