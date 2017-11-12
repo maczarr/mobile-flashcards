@@ -164,6 +164,19 @@ class Quiz extends Component {
     }
 
     /*
+     * If there is no card for a deck the questions array is empty and so
+     * there can't be a quiz. The user gets informed that a card needs to
+     * be added to the deck.
+     */
+    if(questions.length === 0) {
+      return (
+        <View style={styles.container}>
+          <Text>You have to add a card to the deck first before you can take a quiz.</Text>
+        </View>
+      )
+    }
+
+    /*
      * If the quiz isn't over a flip card will be rendered (front view
      * shows the question, back shows the answer) and two buttons to mark
      * the current card as correct or incorrect answered.

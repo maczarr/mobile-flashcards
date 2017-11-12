@@ -45,6 +45,9 @@ class Decks extends Component {
 
     return (
       <View style={styles.container}>
+        {decksArr.length === 0 && (
+          <Text>No decks have been created yet. Go to the "New Deck"-Tab to create one.</Text>
+        )}
         {decksArr.length > 0 && (<FlatList
           data={decksArr}
           renderItem={this.renderItem}
