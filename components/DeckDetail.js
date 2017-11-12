@@ -12,6 +12,11 @@ class DeckDetail extends Component {
     }
   }
 
+  /*
+   * The deck detail view shows some informational text about the deck and
+   * renders two buttons with the help of the CtaButton-Component routing
+   * the user to the "Quiz" or "Add Card" view.
+   */
   render() {
     const { title, questions } = this.props.deckDetails;
     const qAmount = questions.length;

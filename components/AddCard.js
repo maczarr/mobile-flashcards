@@ -18,6 +18,12 @@ class AddCard extends Component {
     answer: ''
   }
 
+  /*
+   * When the form gets submitted the values are being read from the local
+   * state. After sending them to the API-Function for adding them
+   * to a deck they get dispatched to the redux store and at the end the
+   * user gets routed to the deck detail view.
+   */
   submit = () => {
     const { question, answer } = this.state;
     const { deckId } = this.props;

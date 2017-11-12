@@ -26,6 +26,9 @@ class Quiz extends Component {
     }
   }
 
+  /*
+   * The state of the current quiz gets stored in a local state object.
+   */
   state = {
     questionsTotal: this.props.questions.length,
     currentQuestion: 0,
@@ -34,6 +37,11 @@ class Quiz extends Component {
     showScore: false,
   }
 
+  /*
+   * If the user hits the button for a correct answer the value in
+   * the local state gets increased and the function for going forward
+   * to the next question gets called.
+   */
   submitCorrect = () => {
     let { answerCorrect } = this.state;
 
@@ -44,6 +52,11 @@ class Quiz extends Component {
     this.nextQuestion();
   }
 
+  /*
+   * If the user hits the button for an incorrect answer the value in
+   * the local state gets increased and the function for going forward
+   * to the next question gets called.
+   */
   submitIncorrect = () => {
     let { answerIncorrect } = this.state;
 
@@ -54,6 +67,13 @@ class Quiz extends Component {
     this.nextQuestion();
   }
 
+  /*
+   * This function forwards to the next questions by increasing the
+   * value for the current question in the local state.
+   * If the quiz is over (the user answered the last question) the score
+   * gets visible, the notification for today gets cleared and a
+   * new notification is being set for the upcoming days.
+   */
   nextQuestion = () => {
     let { currentQuestion, questionsTotal } = this.state;
 
@@ -85,9 +105,14 @@ class Quiz extends Component {
     const { questions, deckId } = this.props;
     let { currentQuestion, answerCorrect, answerIncorrect } = this.state;
 
+    /*
+     * If the quiz is over the score will be shown with some
+     * hopefully motivational text and two buttons for doing the quiz again
+     * or going back to the deck detail view.
+     */
     if(showScore) {
       const percentScore = Math.floor((100 / questionsTotal) * answerCorrect);
-      let motivation = 'Woo, default motivation... how booooooooring!';
+      let motivation = '';
 
       if(percentScore > 99) {
         motivation = 'WOW! That\'s just... wow... Is that a Kobayashi-Maru situation? No no, you just did great work, I\'m honored being a part of it!\nI have to tell that to the other apps...';
@@ -138,6 +163,12 @@ class Quiz extends Component {
       )
     }
 
+    /*
+     * If the quiz isn't over a flip card will be rendered (front view
+     * shows the question, back shows the answer) and two buttons to mark
+     * the current card as correct or incorrect answered.
+     * The buttons are instances of the CtaButton-Component.
+     */
     return (
       <View style={styles.container}>
         <View style={styles.counterContainer}>

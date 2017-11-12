@@ -10,6 +10,12 @@ class NewDeck extends Component {
     text: ''
   }
 
+  /*
+   * When the form gets submitted the value is being read from the local
+   * state. After sending it to the API-Function for creating a new deck
+   * it gets dispatched to the redux store and at the end the
+   * user gets routed to the detail view of the new deck.
+   */
   submit = () => {
     const { text } = this.state;
 

@@ -1,5 +1,6 @@
 import { RECEIVE_DECKS, NEW_DECK, NEW_CARD } from '../actions';
 
+// Reducer for the decks
 function decks (state = {}, action) {
   switch (action.type) {
     case RECEIVE_DECKS:

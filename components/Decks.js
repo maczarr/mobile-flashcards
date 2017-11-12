@@ -5,6 +5,10 @@ import { receiveDecks } from '../actions';
 import { getDecks } from '../utils/api';
 
 class Decks extends Component {
+  /*
+   * On the start of the component all decks are getting fetched through
+   * the API and after that dispatched to the redux store.
+   */
   componentDidMount() {
     const { dispatch } = this.props;
 
@@ -31,6 +35,10 @@ class Decks extends Component {
     )
   }
 
+  /*
+   * To have a smooth scrolling user experience through the list of decks
+   * everythings gets rendered with the help of the FlatList-Component.
+   */
   render() {
     const { decks } = this.props;
     const decksArr = Object.keys(decks).map(deck => decks[deck]);

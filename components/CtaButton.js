@@ -1,6 +1,10 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
+/*
+ * This Component is responsible for all Call-To-Action buttons in the app to
+ * have a constant layout in every view.
+ */
 export default function CtaButton ({ children, onPress, layout = 'dark', size }) {
   let btnStyles     = [styles.btn];
   let btnTxtStyles  = [styles.btnTxt];

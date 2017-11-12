@@ -20,6 +20,7 @@ function FlashcardsStatusBar ({backgroundColor, ...props}) {
   )
 }
 
+// The tab navigation is being set up
 const Tabs = TabNavigator({
   Decks: {
     screen: Decks,
@@ -50,6 +51,12 @@ const Tabs = TabNavigator({
   }
 })
 
+/*
+ * The main navigation is a mix of a tab navigation
+ * on the initial stack and everything outside of the
+ * tabs is a new stack item.
+ * This navigator wraps all content components inside of it.
+ */
 const MainNavigator = StackNavigator({
   Home: {
     screen: Tabs,
@@ -84,6 +91,10 @@ const MainNavigator = StackNavigator({
 })
 
 export default class App extends React.Component {
+  /*
+   * When the app gets mounted it sets a local Notification. The function
+   * takes care of being set only once.
+   */
   componentDidMount() {
     setLocalNotification()
   }
