@@ -98,9 +98,9 @@ class Quiz extends Component {
       } else if(percentScore >= 50) {
         motivation = 'Great! G-R-E-A-T! You\'re on the right path!';
       } else if(percentScore >= 20) {
-        motivation = 'That\'s good! Give it another try, I\'m shure you\'re getting better!';
+        motivation = 'That\'s good! Give it another try, I\'m sure you\'re getting better!';
       } else {
-        motivation = 'Bad day, huh!?\nI had those aswell when I was a tiny calculator app on a smartphone from Cupertino. I got easy distracted and just returned random numbers, not even recognizing what the users typed in.\nBut these days are over, I got better and you can too! I believe in you, just give it another try! :)';
+        motivation = 'Bad day, huh!?\nI had those when I was a tiny calculator app on a smartphone from Cupertino. I got easily distracted and just returned random numbers.\nBut I got better and you can too! Just give it another try! :)';
       }
 
       return (
