@@ -170,8 +170,8 @@ class Quiz extends Component {
      */
     if(questions.length === 0) {
       return (
-        <View style={styles.container}>
-          <Text>You have to add a card to the deck first before you can take a quiz.</Text>
+        <View style={styles.noCardsContainer}>
+          <Text style={styles.noCardsTxt}>You have to add a card to the deck first before you can take a quiz.</Text>
         </View>
       )
     }
@@ -230,6 +230,15 @@ class Quiz extends Component {
 }
 
 const styles = StyleSheet.create({
+  noCardsContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    padding: 15,
+  },
+  noCardsTxt: {
+    fontSize: 25,
+  },
   scoreContainer: {
     flex: 1,
     backgroundColor: '#fff',

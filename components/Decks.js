@@ -46,7 +46,9 @@ class Decks extends Component {
     return (
       <View style={styles.container}>
         {decksArr.length === 0 && (
-          <Text>No decks have been created yet. Go to the "New Deck"-Tab to create one.</Text>
+          <View style={styles.noDecksContainer}>
+            <Text style={styles.noDecksTxt}>There are no decks yet. Go to the "New Deck"-Tab to create one.</Text>
+          </View>
         )}
         {decksArr.length > 0 && (<FlatList
           data={decksArr}
@@ -60,6 +62,15 @@ class Decks extends Component {
 }
 
 const styles = StyleSheet.create({
+  noDecksContainer: {
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    padding: 15,
+  },
+  noDecksTxt: {
+    fontSize: 25,
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',
