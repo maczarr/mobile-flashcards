@@ -19,12 +19,14 @@ class NewDeck extends Component {
   submit = () => {
     const { text } = this.state;
 
-    saveDeckTitle(text)
-      .then(data => this.props.dispatch(newDeck(data)))
-      .then(() => this.props.navigation.navigate(
-        'DeckDetail',
-        { deckId: text }
-      ));
+    if(text.length > 0) {
+      saveDeckTitle(text)
+        .then(data => this.props.dispatch(newDeck(data)))
+        .then(() => this.props.navigation.navigate(
+          'DeckDetail',
+          { deckId: text }
+        ));
+    }
   }
 
   render() {

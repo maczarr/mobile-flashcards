@@ -29,12 +29,14 @@ class AddCard extends Component {
     const { deckId } = this.props;
     const card = { question, answer };
 
-    addCardToDeck(deckId, card)
-      .then(() => this.props.dispatch(newCard(deckId, card)))
-      .then(() => this.props.navigation.navigate(
-        'DeckDetail',
-        { deckId }
-      ));
+    if(question.length > 0 && answer.length > 0) {
+      addCardToDeck(deckId, card)
+        .then(() => this.props.dispatch(newCard(deckId, card)))
+        .then(() => this.props.navigation.navigate(
+          'DeckDetail',
+          { deckId }
+        ));
+    }
   }
 
   render() {
